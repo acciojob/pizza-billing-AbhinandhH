@@ -13,23 +13,22 @@ public class Pizza {
     final private int basePrice;
     final private int extraCheesePrice = 80;
     final private int takeAway = 20;
-    final private int extraToppingPrice;
 
     public Pizza(Boolean isVeg){
         bill = "";
         this.isVeg = isVeg;
         if(isVeg){
             price = 300;
-            extraToppingPrice = 70;
         }else{
             price = 400;
-            extraToppingPrice = 120;
         }
         basePrice = this.price;
     }
 
+    final private int extraToppingPrice = isVeg ? 70 : 120;
 
     public int getPrice(){
+        bill += price;
         return this.price;
     }
 
