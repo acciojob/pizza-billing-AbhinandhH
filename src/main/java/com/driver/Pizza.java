@@ -57,8 +57,11 @@ public class Pizza {
     public String getBill(){
         this.bill += "Base Price Of The Pizza: " + this.basePizzaPrice + "\n";
         if(this.isCheese) this.bill += "Extra Cheese Added: " + this.cheesePrice + "\n";
+        else this.bill += "Extra Cheese Added: " +  "\n";
         if(isToppings) this.bill += "Extra Toppings Added: " + this.toppingPrice + "\n";
+        else this.bill += "Extra Toppings Added: " +  "\n";
         if(isPaperbag) this.bill += "Paperbag Added: " + this.bagPrice + "\n";
+        else this.bill += "Paperbag Added: " + "\n";
         this.bill += "Total Price: " + this.getPrice();
 
         return this.bill;
