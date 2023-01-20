@@ -10,7 +10,7 @@ public class Pizza {
     private int cheese;
     private int topping;
     private int bag;
-
+    private boolean isBill;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -52,16 +52,19 @@ public class Pizza {
     }
 
     public String getBill(){
-        if(isExtraCheese){
-            bill += "Extra Cheese Added: " + this.cheese + "\n";
+        if(!isBill){
+            if(isExtraCheese){
+                bill += "Extra Cheese Added: " + this.cheese + "\n";
+            }
+            if(isExtraTopping){
+                bill += "Extra Toppings Added: " + this.topping + "\n";
+            }
+            if(isTakeAway){
+                bill += "Paperbag Added: " + this.bag + "\n";
+            }
+            bill += "Total Price: " + this.price + "\n";
+            isBill = true;
         }
-        if(isExtraTopping){
-            bill += "Extra Toppings Added: " + this.topping + "\n";
-        }
-        if(isTakeAway){
-            bill += "Paperbag Added: " + this.bag + "\n";
-        }
-        bill += "Total Price: " + this.price + "\n";
 
         return bill;
     }
